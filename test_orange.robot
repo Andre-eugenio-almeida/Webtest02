@@ -19,7 +19,7 @@ ${INPUT_USERNAME}        //Input[@name="username"]
 ${INPUT_PASSWORD}        //input[@name="password"]
 ${BUTTON_LOGIN}          //button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"] 
 ${BUTTON_UPGRADE}        //button[@class="oxd-glass-button orangehrm-upgrade-button" ]
-${INVALID_CREDENTIALS}    //p[@class="oxd-text oxd-text--p oxd-alert-content-text"]
+${INVALID_CREDENTIALS}   //p[@class="oxd-text oxd-text--p oxd-alert-content-text"]
 
 
 
