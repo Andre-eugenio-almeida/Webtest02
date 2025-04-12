@@ -20,9 +20,11 @@ ${INPUT_PASSWORD}        //input[@name="password"]
 ${BUTTON_LOGIN}          //button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"] 
 ${BUTTON_UPGRADE}        //button[@class="oxd-glass-button orangehrm-upgrade-button" ]
 ${INVALID_CREDENTIALS}   //p[@class="oxd-text oxd-text--p oxd-alert-content-text"]
-
-
-
+${BUTTON_MY_INFO}        //*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[6]/a  
+${FIRST_NAME_FIELD}     //input[@name="firstName"]
+${MID_NAME_FIELD}       //input[@name="middleName"] 
+${LAST_NAME_FIELD}      //input[@name="lastName"]
+${BUTTON_SAVE}          //button[@class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]
 
 *** Keywords ***
 Abrir o navegador e acessar o site
@@ -68,36 +70,59 @@ Exibir resposta de senha inválida
 
 
 
+Trocar de nome e sobrenome
+    Click Element    locator=${BUTTON_MY_INFO}    
+    Click Element    locator=${FIRST_NAME_FIELD}
+    Input Text       locator=${FIRST_NAME_FIELD}    text=Tocha
+    Click Element    locator=${MID_NAME_FIELD} 
+    Input Text       locator=${MID_NAME_FIELD}    text=Teste
+    Click Element    locator=${LAST_NAME_FIELD}
+    Input Text       locator=${LAST_NAME_FIELD}  text=Almeida
+    Click Element     locator=${BUTTON_SAVE} 
+    
+    
+
 *** Test Cases ***
 
 
-TC01 - Acessar o site do Orange HRM 
-    [Tags]    TC01   Login
-    Verificar se a página foi aberta
+# TC01 - Acessar o site do Orange HRM 
+#     [Tags]    TC01   Login
+#     Verificar se a página foi aberta
    
 
-TC02 - Acessar o site do Orange HRM e fazer login 
-    [Tags]    TC02    Login
+# TC02 - Acessar o site do Orange HRM e fazer login 
+#     [Tags]    TC02    Login
+#     Verificar se a página foi aberta
+#     Informar o nome de usuário
+#     Informar a senha
+#     Clicar no botão de login
+#     Verificar se o login foi feito
+
+
+# TC03 - Acessar o site do Orange HRM e fazer login com username inválido
+#     [Tags]    TC03    Login
+#     Verificar se a página foi aberta
+#     Informar o nome de usuário inválido
+#     Informar a senha 
+#     Clicar no botão de login
+#     Exibir resposta de credencial inválida
+
+
+# TC04 - Acessar o site do Orange HRM e fazer login com senha inválida
+#     [Tags]    TC04    Login
+#     Verificar se a página foi aberta
+#     Informar o nome de usuário 
+#     Informar a senha inválida
+#     Clicar no botão de login
+#     Exibir resposta de senha inválida
+
+TC05 - Acessar o site do Orange HRM e fazer login, e trocar nome do usauario
+    [Tags]    TC05    Login
     Verificar se a página foi aberta
     Informar o nome de usuário
     Informar a senha
     Clicar no botão de login
     Verificar se o login foi feito
+    Trocar de nome e sobrenome
+    
 
-
-TC03 - Acessar o site do Orange HRM e fazer login com username inválida
-    [Tags]    TC03    Login
-    Verificar se a página foi aberta
-    Informar o nome de usuário inválido
-    Informar a senha 
-    Clicar no botão de login
-    Exibir resposta de credencial inválida
-
-
-TC04 - Acessar o site do Orange HRM e fazer login com senha inválida
-    [Tags]    TC04    Login
-    Verificar se a página foi aberta
-    Informar o nome de usuário 
-    Informar a senha inválida
-    Clicar no botão de login
-    Exibir resposta de senha inválida
