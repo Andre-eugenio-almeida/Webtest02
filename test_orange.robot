@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-Test Setup    Abrir o navegador e acessar o site
+Test Setup    Abrir o navegador e acessar o site 
 Test Teardown    Close Browser
 
 
@@ -92,7 +92,6 @@ TC01 - Acessar o site do Orange HRM
 
 TC02 - Acessar o site do Orange HRM e fazer login 
     [Tags]    TC02    Login
-    Verificar se a página foi aberta
     Informar o nome de usuário
     Informar a senha
     Clicar no botão de login
@@ -101,7 +100,6 @@ TC02 - Acessar o site do Orange HRM e fazer login
 
 TC03 - Acessar o site do Orange HRM e fazer login com username inválido
     [Tags]    TC03    Login
-    Verificar se a página foi aberta
     Informar o nome de usuário inválido
     Informar a senha 
     Clicar no botão de login
@@ -110,7 +108,6 @@ TC03 - Acessar o site do Orange HRM e fazer login com username inválido
 
 TC04 - Acessar o site do Orange HRM e fazer login com senha inválida
     [Tags]    TC04    Login
-    Verificar se a página foi aberta
     Informar o nome de usuário 
     Informar a senha inválida
     Clicar no botão de login
@@ -118,7 +115,6 @@ TC04 - Acessar o site do Orange HRM e fazer login com senha inválida
 
 TC05 - Acessar o site do Orange HRM e fazer login, e trocar nome do usauario
     [Tags]    TC05    Login
-    Verificar se a página foi aberta
     Informar o nome de usuário
     Informar a senha
     Clicar no botão de login
