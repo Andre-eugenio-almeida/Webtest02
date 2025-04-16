@@ -14,16 +14,19 @@ ${USER_NAME}   Admin
 ${PASSWORD}    admin123
 ${INVALID_USER_NAME}    Gator
 ${INVALID_PASSWORD}     gator123
+${FIRST_NAME}           André
+${MID_NAME}             Tocha
+${LAST_NAME}            Almeida
 #LOCATOR
 ${INPUT_USERNAME}        //Input[@name="username"]  
 ${INPUT_PASSWORD}        //input[@name="password"]
 ${BUTTON_LOGIN}          //button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"] 
 ${BUTTON_UPGRADE}        //button[@class="oxd-glass-button orangehrm-upgrade-button" ]
 ${INVALID_CREDENTIALS}   //p[@class="oxd-text oxd-text--p oxd-alert-content-text"]
-${BUTTON_MY_INFO}        //*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[6]/a  
-${FIRST_NAME_FIELD}     //input[@name="firstName"]
-${MID_NAME_FIELD}       //input[@name="middleName"] 
-${LAST_NAME_FIELD}      //input[@name="lastName"]
+${BUTTON_MY_INFO}        //a[@class="oxd-main-menu-item active"] 
+${INPUT_FIRST_NAME_FIELD}     //input[@class="oxd-input oxd-input--active orangehrm-firstname"]
+${INPUT_MID_NAME_FIELD}       //input[@name="middleName"] 
+${INPUT_LAST_NAME_FIELD}      //input[@name="lastName"]
 ${BUTTON_SAVE}          //button[@class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]
 
 *** Keywords ***
@@ -64,15 +67,35 @@ Exibir resposta de senha inválida
 
 Trocar de nome e sobrenome
     Click Element    locator=${BUTTON_MY_INFO}    
-    Click Element    locator=${FIRST_NAME_FIELD}
-    Input Text       locator=${FIRST_NAME_FIELD}    text=Tocha
-    Click Element    locator=${MID_NAME_FIELD} 
-    Input Text       locator=${MID_NAME_FIELD}    text=Teste
-    Click Element    locator=${LAST_NAME_FIELD}
-    Input Text       locator=${LAST_NAME_FIELD}  text=Almeida
+    Click Element    locator=${INPUT_FIRST_NAME_FIELD}
+    Input Text       locator=${INPUT_FIRST_NAME_FIELD}    text=Tocha
+    Click Element    locator=${INPUT_MID_NAME_FIELD} 
+    Input Text       locator=${INPUT_MID_NAME_FIELD}    text=Teste
+    Click Element    locator=${INPUT_LAST_NAME_FIELD} 
+    Input Text       locator=${INPUT_LAST_NAME_FIELD}   text=Almeida
     Click Element     locator=${BUTTON_SAVE} 
     
-    
+
+
+Clicar na opção my info
+    Click Element    locator=${BUTTON_MY_INFO}        
+
+
+Atualizar first name ${first_name}  
+    Input Text    locator=${INPUT_FIRST_NAME_FIELD}      text=${first_name} 
+
+
+Atualizar middle name ${mid_name}
+    Input Text    locator=//input[@name="middleName"]     text=${mid_name}
+
+
+Atualizar last name ${last_name}
+    Input Text    locator=${INPUT_LAST_NAME_FIELD}    text=${last_name}
+
+
+Clicar no botão de salvar
+    Click Element    locator=${BUTTON_SAVE} 
+
 
 *** Test Cases ***
 
@@ -112,8 +135,8 @@ TC05 - Atualizar dados do usuário
     Clicar no botão de login
     Verificar se o login foi feito
     Clicar na opção my info
-    Atualizar first name
-    Atualizar middle name
-    Atualizar last name
+    Atualizar first name ${FIRST_NAME} 
+    Atualizar middle name ${MID_NAME} 
+    Atualizar last name ${LAST_NAME}
     Clicar no botão de salvar
 
