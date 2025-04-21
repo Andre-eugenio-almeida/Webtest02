@@ -54,4 +54,5 @@ TC05 - Atualizar dados do usuário
     Atualizar middle name ${MID_NAME} 
     Atualizar last name ${LAST_NAME}
     Clicar no botão de salvar
+    Verificar se nome foi substituido com sucesso
 
