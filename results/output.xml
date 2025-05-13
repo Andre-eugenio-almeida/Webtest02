@@ -1,152 +1,404 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-04-21T20:47:08.045800" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Orange" source="C:\Users\André\Desktop\test02\test\test_orange.robot">
-<test id="s1-t1" name="TC05 - Atualizar dados do usuário" line="46">
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-05-13T18:45:49.281571" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Orange" source="C:\repositorio\test02\test\test_orange.robot">
+<test id="s1-t1" name="TC01 - Acessar o site do Orange HRM" line="17">
 <kw name="Abrir o navegador e acessar o site" owner="orange" type="SETUP">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>value=0.5</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2025-04-21T20:47:08.369709" elapsed="0.000363"/>
+<status status="PASS" start="2025-05-13T18:45:49.695402" elapsed="0.000369"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-04-21T20:47:08.370773" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
-<msg time="2025-04-21T20:47:08.709203" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.85); currently, chromedriver 135.0.7049.95 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-13T18:45:49.696499" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2025-05-13T18:45:50.715345" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.116); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>browser=${BROWSER}</arg>
 <arg>url=${URL}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-04-21T20:47:08.370358" elapsed="4.330333"/>
+<status status="PASS" start="2025-05-13T18:45:49.696061" elapsed="6.080454"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-04-21T20:47:12.701139" elapsed="0.549464"/>
+<status status="PASS" start="2025-05-13T18:45:55.777072" elapsed="0.533416"/>
 </kw>
-<status status="PASS" start="2025-04-21T20:47:08.368364" elapsed="4.882724"/>
+<status status="PASS" start="2025-05-13T18:45:49.694007" elapsed="6.616796"/>
+</kw>
+<kw name="Verificar se a página foi aberta" owner="orange">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${INPUT_USERNAME}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T18:45:56.312353" elapsed="1.048086"/>
+</kw>
+<status status="PASS" start="2025-05-13T18:45:56.311608" elapsed="1.049047"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T18:45:57.361454" elapsed="2.701307"/>
+</kw>
+<tag>Login</tag>
+<tag>TC01</tag>
+<status status="PASS" start="2025-05-13T18:45:49.692565" elapsed="10.370633"/>
+</test>
+<test id="s1-t2" name="TC02 - Acessar o site do Orange HRM e fazer login" line="22">
+<kw name="Abrir o navegador e acessar o site" owner="orange" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>value=0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-05-13T18:46:00.066461" elapsed="0.000298"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:00.067394" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2025-05-13T18:46:00.520468" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.116); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>url=${URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T18:46:00.067009" elapsed="5.086398"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T18:46:05.153849" elapsed="0.554319"/>
+</kw>
+<status status="PASS" start="2025-05-13T18:46:00.066002" elapsed="5.642632"/>
 </kw>
 <kw name="Informar o nome de usuário" owner="orange">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-21T20:47:13.255648" level="INFO">Typing text 'Admin' into text field '//Input[@name="username"]'.</msg>
+<msg time="2025-05-13T18:46:05.712997" level="INFO">Typing text 'Admin' into text field '//Input[@name="username"]'.</msg>
 <arg>locator=${INPUT_USERNAME}</arg>
 <arg>text=${nome}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-21T20:47:13.254054" elapsed="1.673706"/>
+<status status="PASS" start="2025-05-13T18:46:05.711689" elapsed="1.729807"/>
 </kw>
 <arg>${USER_NAME}</arg>
-<status status="PASS" start="2025-04-21T20:47:13.252614" elapsed="1.675677"/>
+<status status="PASS" start="2025-05-13T18:46:05.710127" elapsed="1.731573"/>
 </kw>
 <kw name="Informar a senha" owner="orange">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-21T20:47:14.932213" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<msg time="2025-05-13T18:46:07.443608" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
 <arg>locator=${INPUT_PASSWORD}</arg>
 <arg>text=${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-21T20:47:14.931060" elapsed="1.727465"/>
+<status status="PASS" start="2025-05-13T18:46:07.443013" elapsed="1.701173"/>
 </kw>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2025-04-21T20:47:14.929673" elapsed="1.729351"/>
+<status status="PASS" start="2025-05-13T18:46:07.442227" elapsed="1.702462"/>
 </kw>
 <kw name="Clicar no botão de login" owner="orange">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-21T20:47:16.662512" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]'.</msg>
+<msg time="2025-05-13T18:46:09.148381" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]'.</msg>
 <arg>locator=${BUTTON_LOGIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-21T20:47:16.661562" elapsed="2.128203"/>
+<status status="PASS" start="2025-05-13T18:46:09.147416" elapsed="1.199346"/>
 </kw>
-<status status="PASS" start="2025-04-21T20:47:16.660413" elapsed="2.129599"/>
+<status status="PASS" start="2025-05-13T18:46:09.146135" elapsed="1.201111"/>
 </kw>
 <kw name="Verificar se o login foi feito" owner="orange">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>locator=${BUTTON_UPGRADE}</arg>
 <arg>timeout=15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-21T20:47:18.791109" elapsed="1.043404"/>
+<status status="PASS" start="2025-05-13T18:46:10.349894" elapsed="2.253534"/>
 </kw>
-<status status="PASS" start="2025-04-21T20:47:18.790578" elapsed="1.044188"/>
+<status status="PASS" start="2025-05-13T18:46:10.348620" elapsed="2.255316"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T18:46:12.608187" elapsed="2.661257"/>
+</kw>
+<tag>Login</tag>
+<tag>TC02</tag>
+<status status="PASS" start="2025-05-13T18:46:00.064735" elapsed="15.205160"/>
+</test>
+<test id="s1-t3" name="TC03 - Acessar o site do Orange HRM e fazer login com username inválido" line="30">
+<kw name="Abrir o navegador e acessar o site" owner="orange" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>value=0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-05-13T18:46:15.273137" elapsed="0.000299"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:15.274075" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2025-05-13T18:46:15.614090" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.116); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>url=${URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T18:46:15.273700" elapsed="4.487903"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T18:46:19.762073" elapsed="0.539622"/>
+</kw>
+<status status="PASS" start="2025-05-13T18:46:15.272554" elapsed="5.029599"/>
+</kw>
+<kw name="Informar o nome de usuário" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:20.306755" level="INFO">Typing text 'Gator' into text field '//Input[@name="username"]'.</msg>
+<arg>locator=${INPUT_USERNAME}</arg>
+<arg>text=${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T18:46:20.305131" elapsed="1.719970"/>
+</kw>
+<arg>${INVALID_USER_NAME}</arg>
+<status status="PASS" start="2025-05-13T18:46:20.303610" elapsed="1.722479"/>
+</kw>
+<kw name="Informar a senha" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:22.030173" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<arg>locator=${INPUT_PASSWORD}</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T18:46:22.028987" elapsed="1.726982"/>
+</kw>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-05-13T18:46:22.027490" elapsed="1.728988"/>
+</kw>
+<kw name="Clicar no botão de login" owner="orange">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:23.760195" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]'.</msg>
+<arg>locator=${BUTTON_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T18:46:23.759211" elapsed="1.181490"/>
+</kw>
+<status status="PASS" start="2025-05-13T18:46:23.757929" elapsed="1.183102"/>
+</kw>
+<kw name="Exibir resposta de credencial inválida" owner="orange">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${INVALID_CREDENTIALS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T18:46:24.943124" elapsed="1.873579"/>
+</kw>
+<status status="PASS" start="2025-05-13T18:46:24.942372" elapsed="1.874528"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T18:46:26.817611" elapsed="2.619358"/>
+</kw>
+<tag>Login</tag>
+<tag>TC03</tag>
+<status status="PASS" start="2025-05-13T18:46:15.271385" elapsed="14.166025"/>
+</test>
+<test id="s1-t4" name="TC04 - Acessar o site do Orange HRM e fazer login com senha inválida" line="38">
+<kw name="Abrir o navegador e acessar o site" owner="orange" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>value=0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-05-13T18:46:29.439837" elapsed="0.000274"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:29.440718" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2025-05-13T18:46:29.834046" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.116); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>url=${URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T18:46:29.440355" elapsed="4.457473"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T18:46:33.898258" elapsed="0.529080"/>
+</kw>
+<status status="PASS" start="2025-05-13T18:46:29.439439" elapsed="4.988156"/>
+</kw>
+<kw name="Informar o nome de usuário" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:34.429513" level="INFO">Typing text 'Admin' into text field '//Input[@name="username"]'.</msg>
+<arg>locator=${INPUT_USERNAME}</arg>
+<arg>text=${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T18:46:34.429127" elapsed="1.661022"/>
+</kw>
+<arg>${USER_NAME}</arg>
+<status status="PASS" start="2025-05-13T18:46:34.428389" elapsed="1.662268"/>
+</kw>
+<kw name="Informar a senha" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:36.095006" level="INFO">Typing text 'gator123' into text field '//input[@name="password"]'.</msg>
+<arg>locator=${INPUT_PASSWORD}</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T18:46:36.093801" elapsed="1.707423"/>
+</kw>
+<arg>${INVALID_PASSWORD}</arg>
+<status status="PASS" start="2025-05-13T18:46:36.092223" elapsed="1.709507"/>
+</kw>
+<kw name="Clicar no botão de login" owner="orange">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:37.805372" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]'.</msg>
+<arg>locator=${BUTTON_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T18:46:37.804382" elapsed="2.017104"/>
+</kw>
+<status status="PASS" start="2025-05-13T18:46:37.803078" elapsed="2.018884"/>
+</kw>
+<kw name="Exibir resposta de senha inválida" owner="orange">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${INVALID_CREDENTIALS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T18:46:39.825079" elapsed="1.085422"/>
+</kw>
+<status status="PASS" start="2025-05-13T18:46:39.823409" elapsed="1.087617"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T18:46:40.912726" elapsed="2.641280"/>
+</kw>
+<tag>Login</tag>
+<tag>TC04</tag>
+<status status="PASS" start="2025-05-13T18:46:29.438612" elapsed="14.116264"/>
+</test>
+<test id="s1-t5" name="TC05 - Atualizar dados do usuário" line="46">
+<kw name="Abrir o navegador e acessar o site" owner="orange" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>value=0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-05-13T18:46:43.561311" elapsed="0.000756"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:43.563853" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2025-05-13T18:46:43.910654" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.116); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>url=${URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T18:46:43.562789" elapsed="4.601419"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T18:46:48.164793" elapsed="0.547905"/>
+</kw>
+<status status="PASS" start="2025-05-13T18:46:43.560164" elapsed="5.152779"/>
+</kw>
+<kw name="Informar o nome de usuário" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:48.715585" level="INFO">Typing text 'Admin' into text field '//Input[@name="username"]'.</msg>
+<arg>locator=${INPUT_USERNAME}</arg>
+<arg>text=${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T18:46:48.714806" elapsed="1.674107"/>
+</kw>
+<arg>${USER_NAME}</arg>
+<status status="PASS" start="2025-05-13T18:46:48.713685" elapsed="1.675510"/>
+</kw>
+<kw name="Informar a senha" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:50.391504" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<arg>locator=${INPUT_PASSWORD}</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T18:46:50.390619" elapsed="1.666861"/>
+</kw>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-05-13T18:46:50.389796" elapsed="1.668197"/>
+</kw>
+<kw name="Clicar no botão de login" owner="orange">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T18:46:52.061698" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]'.</msg>
+<arg>locator=${BUTTON_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T18:46:52.060717" elapsed="2.082842"/>
+</kw>
+<status status="PASS" start="2025-05-13T18:46:52.059424" elapsed="2.084352"/>
+</kw>
+<kw name="Verificar se o login foi feito" owner="orange">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${BUTTON_UPGRADE}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T18:46:54.144860" elapsed="1.040953"/>
+</kw>
+<status status="PASS" start="2025-05-13T18:46:54.144348" elapsed="1.041787"/>
 </kw>
 <kw name="Clicar na opção my info" owner="orange">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-21T20:47:19.838080" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[6]/a/span'.</msg>
+<msg time="2025-05-13T18:46:55.189563" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[6]/a/span'.</msg>
 <arg>locator=${BUTTON_MY_INFO}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-21T20:47:19.837513" elapsed="1.756950"/>
+<status status="PASS" start="2025-05-13T18:46:55.188960" elapsed="1.723050"/>
 </kw>
-<status status="PASS" start="2025-04-21T20:47:19.835447" elapsed="1.760262"/>
+<status status="PASS" start="2025-05-13T18:46:55.188067" elapsed="1.724139"/>
 </kw>
 <kw name="Atualizar first name ${FIRST_NAME}" owner="orange" source_name="Atualizar first name ${first_name}">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-21T20:47:21.598309" level="INFO">Typing text 'André' into text field '//input[@class="oxd-input oxd-input--active orangehrm-firstname"]'.</msg>
+<msg time="2025-05-13T18:46:56.914177" level="INFO">Typing text 'André' into text field '//input[@class="oxd-input oxd-input--active orangehrm-firstname"]'.</msg>
 <arg>locator=${INPUT_FIRST_NAME_FIELD}</arg>
 <arg>text=${first_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-21T20:47:21.597723" elapsed="1.786426"/>
+<status status="PASS" start="2025-05-13T18:46:56.913549" elapsed="1.677494"/>
 </kw>
-<status status="PASS" start="2025-04-21T20:47:21.596686" elapsed="1.787954"/>
+<status status="PASS" start="2025-05-13T18:46:56.912804" elapsed="1.678439"/>
 </kw>
 <kw name="Atualizar middle name ${MID_NAME}" owner="orange" source_name="Atualizar middle name ${mid_name}">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-21T20:47:23.390226" level="INFO">Typing text 'Tocha' into text field '//input[@name="middleName"]'.</msg>
+<msg time="2025-05-13T18:46:58.592833" level="INFO">Typing text 'Tocha' into text field '//input[@name="middleName"]'.</msg>
 <arg>locator=${INPUT_MID_NAME_FIELD}</arg>
 <arg>text=${mid_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-21T20:47:23.388404" elapsed="1.730998"/>
+<status status="PASS" start="2025-05-13T18:46:58.592410" elapsed="1.652956"/>
 </kw>
-<status status="PASS" start="2025-04-21T20:47:23.386246" elapsed="1.733646"/>
+<status status="PASS" start="2025-05-13T18:46:58.591872" elapsed="1.654004"/>
 </kw>
 <kw name="Atualizar last name ${LAST_NAME}" owner="orange" source_name="Atualizar last name ${last_name}">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-21T20:47:25.123808" level="INFO">Typing text 'Almeida' into text field '//input[@name="lastName"]'.</msg>
+<msg time="2025-05-13T18:47:00.251132" level="INFO">Typing text 'Almeida' into text field '//input[@name="lastName"]'.</msg>
 <arg>locator=${INPUT_LAST_NAME_FIELD}</arg>
 <arg>text=${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-21T20:47:25.122650" elapsed="1.712114"/>
+<status status="PASS" start="2025-05-13T18:47:00.248967" elapsed="1.693503"/>
 </kw>
-<status status="PASS" start="2025-04-21T20:47:25.121299" elapsed="1.713963"/>
+<status status="PASS" start="2025-05-13T18:47:00.247330" elapsed="1.695399"/>
 </kw>
 <kw name="Clicar no botão de salvar" owner="orange">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-21T20:47:26.839428" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]'.</msg>
+<msg time="2025-05-13T18:47:01.944506" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]'.</msg>
 <arg>locator=${BUTTON_SAVE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-21T20:47:26.838533" elapsed="1.125054"/>
+<status status="PASS" start="2025-05-13T18:47:01.944193" elapsed="1.161009"/>
 </kw>
-<status status="PASS" start="2025-04-21T20:47:26.837435" elapsed="1.126626"/>
+<status status="PASS" start="2025-05-13T18:47:01.943701" elapsed="1.161893"/>
 </kw>
 <kw name="Verificar se nome foi substituido com sucesso" owner="orange">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-04-21T20:47:27.967496" level="INFO">Clicking element '//img[@class="employee-image"]'.</msg>
+<msg time="2025-05-13T18:47:03.107367" level="INFO">Clicking element '//img[@class="employee-image"]'.</msg>
 <arg>locator=${IMG_USER}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-21T20:47:27.966576" elapsed="1.489633"/>
+<status status="PASS" start="2025-05-13T18:47:03.106943" elapsed="1.482547"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>locator=${IMG_USER}</arg>
 <arg>timeout=15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-04-21T20:47:29.457473" elapsed="1.067267"/>
+<status status="PASS" start="2025-05-13T18:47:04.590223" elapsed="1.063057"/>
 </kw>
-<status status="PASS" start="2025-04-21T20:47:27.965420" elapsed="2.559812"/>
+<status status="PASS" start="2025-05-13T18:47:03.106344" elapsed="2.547435"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-04-21T20:47:30.526918" elapsed="2.674511"/>
+<status status="PASS" start="2025-05-13T18:47:05.655482" elapsed="2.684941"/>
 </kw>
 <tag>TC05</tag>
-<status status="PASS" start="2025-04-21T20:47:08.366992" elapsed="24.835321"/>
+<status status="PASS" start="2025-05-13T18:46:43.558010" elapsed="24.783553"/>
 </test>
 <doc>teste site Amazon</doc>
-<status status="PASS" start="2025-04-21T20:47:08.047818" elapsed="25.159183"/>
+<status status="PASS" start="2025-05-13T18:45:49.283611" elapsed="79.062302"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="4" fail="0" skip="0">Login</stat>
+<stat pass="1" fail="0" skip="0">TC01</stat>
+<stat pass="1" fail="0" skip="0">TC02</stat>
+<stat pass="1" fail="0" skip="0">TC03</stat>
+<stat pass="1" fail="0" skip="0">TC04</stat>
 <stat pass="1" fail="0" skip="0">TC05</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test Orange">Test Orange</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="Test Orange">Test Orange</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-04-21T20:47:08.709203" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.85); currently, chromedriver 135.0.7049.95 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-13T18:45:50.715345" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.116); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-13T18:46:00.520468" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.116); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-13T18:46:15.614090" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.116); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-13T18:46:29.834046" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.116); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-13T18:46:43.910654" level="WARN">The chromedriver version (134.0.6998.165) detected in PATH at C:\Users\André\AppData\Local\Programs\Python\Python313\Scripts\chromedriver.exe might not be compatible with the detected chrome version (135.0.7049.116); currently, chromedriver 135.0.7049.114 is recommended for chrome 135.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>
