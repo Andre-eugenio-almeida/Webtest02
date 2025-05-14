@@ -29,38 +29,6 @@ ${INPUT_LAST_NAME_FIELD}    //input[@name="lastName"]
 ${BUTTON_SAVE}              //button[@class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]
 
 *** Keywords ***
-Abrir o navegador e acessar o site
-    Set Selenium Speed    value=0.5
-    Open Browser    browser=${BROWSER}    url=${URL}  
-    Maximize Browser Window  
-
-
-Verificar se a página foi aberta
-    Wait Until Element Is Visible    locator=${INPUT_USERNAME}   timeout=15s
-     
-
-Informar o nome de usuário 
-    [Arguments]    ${nome}
-    Input Text    locator=${INPUT_USERNAME}    text=${nome}
-
-
-Informar a senha
-    [Arguments]  ${password}
-    Input Text    locator=${INPUT_PASSWORD}      text=${password}
-    
-
-Clicar no botão de login
-    Click Element    locator=${BUTTON_LOGIN}    
-
-
-Verificar se o login foi feito
-    Wait Until Element Is Visible    locator=${BUTTON_UPGRADE}    timeout=15s
-
-
-Exibir resposta de credencial inválida
-    Wait Until Element Is Visible    locator=${INVALID_CREDENTIALS}
-  
-
 Exibir resposta de senha inválida
     Wait Until Element Is Visible    locator=${INVALID_CREDENTIALS}
 

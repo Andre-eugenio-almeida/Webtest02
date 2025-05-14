@@ -1,19 +1,10 @@
 *** Settings ***
-
-Documentation  teste site Amazon
 Resource    ../resources/orange.resource
-
-
 Test Setup    Abrir o navegador e acessar o site 
 Test Teardown    Close Browser
 
 
-
-
-
 *** Test Cases ***
-
-
 TC01 - Acessar o site do Orange HRM 
     [Tags]    TC01   Login
     Verificar se a página foi aberta
